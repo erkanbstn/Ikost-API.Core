@@ -1,0 +1,21 @@
+﻿@model Bayiler
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Bayi Kayıt</h1>
+<br />
+
+<div>
+    <form asp-controller="Bayi" asp-action="Index" method="post">
+    <span>Bayi Adı</span>
+    <input asp-for="BayiAd" class="form-control"/>
+    <br />
+    <span>Bayi Hakediş Yüzde</span>
+    <input asp-for="HakedisYuzde" class="form-control"/>
+    <br />
+    <input type="submit" value="Yeni Kayıt" class="btn btn-primary"/>
+</form>
+</div>

@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Rapor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<h1>Bayi Rapor</h1>
+<br />
+
+<div>
+    <span>Başlangıç Tarih</span>
+    <input name="tarih1" id="tarih1" class="form-control" type="date" />
+    <br />
+    <span>Bitiş Tarih</span>
+    <input name="tarih2" id="tarih2" class="form-control" type="date" />
+    <br />
+    <input type="button" id="submitButton" value="Listele" class="btn btn-primary" />
+</div>
+<br />
+<br />
+<div class="reportbody">
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#submitButton").click(function () {
+            var DateObject = {
+                Tarih1: $("#tarih1").val(),
+                Tarih2: $("#tarih2").val(),
+            };
+            $.ajax({
+                url: "/Bayi/Rapor",
+                data: DateObject,
+                type: "POST",
+                success: function (data) {
+                    var html = '<hr />';
+                    html += '<h2>Bayi Hak Ediş Raporu</h2> <br />'
+                    html += '<table class="table table-hover">';
+                    html += '<tr>';
+                    html += '<th> Bayi';
+                    html += '</th>';
+                    html += '<th> Toplam Hak Ediş';
+                    html += '</th>';
+                    html += '<tr>';
+                    $.each(data.sonuc, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.bayi + '</td>';
+                        html += '<td>' + item.toplamHakEdis + '</td>';
+                        html += '</tr>';
+                    });
+                    html += '</table>';
+
+                    $('.reportbody').html(html);
+                },
+                error: function (data) {
+                    alert("Girilen Değerler Arasında Mevcut Veri Bulunamadı.");
+                }
+            });
+        })
+    });
+</script>

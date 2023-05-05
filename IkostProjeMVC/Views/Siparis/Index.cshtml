@@ -1,0 +1,20 @@
+﻿@model Siparisler
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sipariş Kayıt</h1>
+<br />
+
+<div>
+    <form asp-controller="Siparis" asp-action="Index" method="post">
+        <span>Sipariş Tutar</span>
+        <input asp-for="SiparisTutar" class="form-control" />
+        <br />
+        <span>Bayi</span>
+        @Html.DropDownListFor(m=>m.BayiID,(List<SelectListItem>)ViewBag.bayi, "Bayi Seçiniz", new { @class = "form-control" })
+        <br />
+        <input type="submit" value="Yeni Kayıt" class="btn btn-primary" />
+    </form>
+</div>
