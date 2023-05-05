@@ -16,7 +16,7 @@ namespace IkostProjeMVC.Migrations
                     BayiID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BayiAd = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HakedisYuzde = table.Column<int>(type: "int", nullable: false)
+                    HakedisYuzde = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,9 +29,10 @@ namespace IkostProjeMVC.Migrations
                 {
                     SiparisID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SiparisTutar = table.Column<int>(type: "int", nullable: false),
-                    HakedisTutar = table.Column<int>(type: "int", nullable: false),
+                    SiparisTutar = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    HakedisTutar = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Tarih = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BayiAd = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BayiID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

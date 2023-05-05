@@ -30,7 +30,7 @@ namespace IkostProjeMVC.Controllers
         {
             // SQL = Select * from Bayilers where BayiID=s.BayiID
             var bayi = _context.Bayilers.Find(s.BayiID);
-            s.HakedisTutar = bayi.HakedisYuzde;
+            s.HakedisTutar = s.SiparisTutar * (bayi.HakedisYuzde / 100);
             s.Tarih = DateTime.Now;
             s.BayiAd = bayi.BayiAd;
             // SQL = Insert into Siparislers values (s.HakedisTutar,s.Tarih,s.SiparisTutar,s.BayiID)

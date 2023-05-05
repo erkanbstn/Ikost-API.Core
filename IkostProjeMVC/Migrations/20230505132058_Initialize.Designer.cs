@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IkostProjeMVC.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230505123021_BayiAdAdded")]
-    partial class BayiAdAdded
+    [Migration("20230505132058_Initialize")]
+    partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,8 +36,8 @@ namespace IkostProjeMVC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HakedisYuzde")
-                        .HasColumnType("int");
+                    b.Property<decimal>("HakedisYuzde")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("BayiID");
 
@@ -59,11 +59,11 @@ namespace IkostProjeMVC.Migrations
                     b.Property<int>("BayiID")
                         .HasColumnType("int");
 
-                    b.Property<int>("HakedisTutar")
-                        .HasColumnType("int");
+                    b.Property<decimal>("HakedisTutar")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("SiparisTutar")
-                        .HasColumnType("int");
+                    b.Property<decimal>("SiparisTutar")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("Tarih")
                         .HasColumnType("datetime2");

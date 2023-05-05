@@ -3,8 +3,8 @@
     public class Siparisler
     {
         public int SiparisID { get; set; }
-        public int SiparisTutar { get; set; }
-        public int HakedisTutar { get; set; }
+        public decimal SiparisTutar { get; set; }
+        public decimal HakedisTutar { get; set; }
         public DateTime Tarih { get; set; }
         public string BayiAd{ get; set; }
         public int BayiID { get; set; }
