@@ -1,0 +1,62 @@
+﻿@model List<Bayiler>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<div class="BayiList">
+    <table class="table table-hover">
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Bayi
+            </th>
+            <th>
+                Hakediş Yüzde
+            </th>
+            <th>
+                Aksiyon
+            </th>
+        </tr>
+        @foreach (var bayi in Model)
+        {
+            <tr>
+                <td>
+                    @bayi.BayiID
+                </td>
+                <td>
+                    @bayi.BayiAd
+                </td>
+                <td>
+                    @bayi.HakedisYuzde
+                </td>
+                <td>
+                    <input type="button" onclick="DeleteBayi(@bayi.BayiID)" id="BtnSil" class="btn btn-danger" value="Sil" />
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<script>
+    function DeleteBayi(id) {
+        $.ajax({
+            url: '/Bayi/BayiSil/',
+            data: { id: id },
+            type: 'POST',
+            success: function (data) {
+                if (data.transaction == true) {
+                    location.reload();
+                }
+                else {
+                    toastr.warning('Silmeye Çalıştığınız Bayiye Ait Sipariş Mevcuttur.')
+                }
+            },
+            error: function (data) {
+                toastr.error('Bir Hata Oluştu Lütfen Daha Sonra Tekrar Deneyin.')
+            }
+        })
+    }
+</script>

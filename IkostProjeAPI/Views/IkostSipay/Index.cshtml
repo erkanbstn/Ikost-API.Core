@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -90,3 +89,24 @@
     </div>
     <div style="clear:both;"></div>
 </form>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+
+
+    $(document).ready(function () {
+        $.ajax({
+            url: 'Sipay/Index',
+            type: 'GET',
+            success: function (result) {
+                console.log(result)
+            },
+            error: function (errormessage) {
+                console.log(errormessage)
+            }
+        });
+    });
+</script>

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IkostProjeMVC", "IkostProjeMVC\IkostProjeMVC.csproj", "{ED2C6A9F-F535-4975-B2D7-D6A9A2B7F709}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IkostProjeAPI", "IkostProjeAPI\IkostProjeAPI.csproj", "{B41AEA1A-83A7-45EF-95BA-F571BF42C5A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IkostSipayAPI", "IkostSipayAPI\IkostSipayAPI.csproj", "{04608F7B-0A2E-487A-985F-17143C4C9564}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{ED2C6A9F-F535-4975-B2D7-D6A9A2B7F709}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED2C6A9F-F535-4975-B2D7-D6A9A2B7F709}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED2C6A9F-F535-4975-B2D7-D6A9A2B7F709}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B41AEA1A-83A7-45EF-95BA-F571BF42C5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B41AEA1A-83A7-45EF-95BA-F571BF42C5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B41AEA1A-83A7-45EF-95BA-F571BF42C5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B41AEA1A-83A7-45EF-95BA-F571BF42C5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04608F7B-0A2E-487A-985F-17143C4C9564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04608F7B-0A2E-487A-985F-17143C4C9564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04608F7B-0A2E-487A-985F-17143C4C9564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04608F7B-0A2E-487A-985F-17143C4C9564}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

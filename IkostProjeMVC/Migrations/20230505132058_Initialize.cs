@@ -43,7 +43,7 @@ namespace IkostProjeMVC.Migrations
                         column: x => x.BayiID,
                         principalTable: "Bayilers",
                         principalColumn: "BayiID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

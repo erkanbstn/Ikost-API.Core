@@ -10,12 +10,24 @@
 
 <div>
     <form asp-controller="Bayi" asp-action="Index" method="post">
-    <span>Bayi Adı</span>
-    <input asp-for="BayiAd" class="form-control"/>
-    <br />
-    <span>Bayi Hakediş Yüzde</span>
-    <input asp-for="HakedisYuzde" class="form-control"/>
-    <br />
-    <input type="submit" value="Yeni Kayıt" class="btn btn-primary"/>
-</form>
+        <span>Bayi Adı</span>
+        <input asp-for="BayiAd" class="form-control" />
+        <br />
+        <span>Bayi Hakediş Yüzde</span>
+        <input asp-for="HakedisYuzde" class="form-control" />
+        <br />
+        <input type="submit" value="Yeni Kayıt" class="btn btn-primary" />
+    </form>
 </div>
+<br />
+@if (ViewBag.mevcut == 0)
+{
+    <div class="alert alert-danger">
+        Eklemeye Çalıştığınız Bayi Zaten Mevcuttur.
+    </div>
+}
+<br />
+<br />
+<h2>Bayiler</h2>
+<br />
+@await Component.InvokeAsync("BayiList")
