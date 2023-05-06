@@ -7,7 +7,7 @@ namespace IkostProjeMVC.Models.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=GEOPC\\SQLEXPRESS;Initial Catalog=IkostDb;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Server=GEOPC\\SQLEXPRESS;Initial Catalog=IkostDb;Integrated Security=True"); // Revize Edilmeli
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
